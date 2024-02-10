@@ -1010,6 +1010,23 @@ async def SEM_6(update, context):
                      'BCOM/SEM 6/TYBCom - Purchasing & Store keeping Paper - II.pdf',
                      'BCOM/SEM 6/TYBCom VI Financial accounting & auditing paper IX financial accounting.pdf',
                      ]
+        # Send the PDF file to the user
+        delay_seconds = 10
+        write_timeout=35
+        read_timeout=20
+        for pdf_path in pdf_paths:
+                with open(pdf_path, 'rb') as file:
+                    await context.bot.send_document(chat_id=chat_id, document=file)
+        
+        await context.bot.send_message(chat_id=chat_id, text="Question papers 2022-23 👇")
+        pdf_paths = ['BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Business Economics VI.pdf',
+                     'BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Direct & Indirect Taxation Paper - II.pdf',
+                     'BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Direct & Indirect Taxation Paper - II.pdf',
+                     'BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Financial accounting & auditing paper IX financial accounting.pdf',
+                     'BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Financial Accounting and Auditing X -Cost Accounting.pdf',
+                     'BCOM/SEM 6/TYBCom Sem-VI (2022-23) - Purchasing & Store keeping Paper - II.pdf'
+                    ]
+
         
     elif Standard == "BSC":          
         await context.bot.send_message(chat_id=chat_id, text="BOTANY 👇")
